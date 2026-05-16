@@ -1,0 +1,29 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4
+
+    # TASK 2: Linting Step
+    - name: Run Linter
+      run: |
+        echo "Running Linter..."
+        # Contoh jika Node.js: npm run lint
+        # Contoh jika Python: flake8 .
+
+    # TASK 3: Test Step
+    - name: Run Tests
+      run: |
+        echo "Running Tests..."
+        # Contoh jika Node.js: npm test
+        # Contoh jika Python: pytest
