@@ -1,0 +1,41 @@
+Run actions/checkout@v4
+  with:
+    repository: [username]/[nama-repo]
+    token: ***
+Syncing repository: [username]/[nama-repo]
+Post checkout clean up
+Cleaning up the repository...
+
+Run actions/setup-python@v5
+  with:
+    python-version: 3.10
+    cache: pip
+Downloading Python version 3.10...
+Extracting Python...
+Successfully setup Python version 3.10.
+
+Run python -m pip install --upgrade pip
+Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.10.12/x64/lib/python3.10/site-packages (23.0.1)
+Successfully upgraded pip to 24.0
+
+Run pip install flake8 pytest
+Successfully installed flake8-7.0.0 pytest-8.0.0
+
+Run flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+0
+Process completed with exit code 0.
+
+Run pytest
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.0.0, pluggy-1.4.0
+rootdir: /home/runner/work/[nama-repo]/[nama-repo]
+collected 1 item
+
+test_app.py .                                                            [100%]
+
+============================== 1 passed in 0.05s ===============================
+Process completed with exit code 0.
+
+Post Run actions/checkout@v4
+Cleaning up credentials...
+Job completed successfully.
